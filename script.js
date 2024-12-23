@@ -43,20 +43,22 @@ let currentPlayer = 'X';
 
     function makeMove(index) {
       gameState[index] = currentPlayer;
-      document.querySelector(`[data-index="${index}"]`).textContent = currentPlayer;
-      
+      const cell = document.querySelector(`[data-index="${index}"]`);
+      cell.textContent = currentPlayer;
+      cell.classList.add(currentPlayer.toLowerCase()); // Add class based on current player
+    
       if (checkWin()) {
         gameActive = false;
         updateStatus(`Player ${currentPlayer} wins!`);
         return;
       }
-
+    
       if (checkDraw()) {
         gameActive = false;
         updateStatus("Game ended in a draw!");
         return;
       }
-
+    
       currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
       updateStatus();
     }
