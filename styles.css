@@ -1,9 +1,12 @@
 .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient colors */
+  height: 100vh; 
+  color: white;
+}
   
   .board {
     display: grid;
@@ -24,9 +27,12 @@
     font-size: 40px;
     cursor: pointer;
   }
+  .cell.x {
+    background-color: lightblue;
+  }
   
-  .cell:hover {
-    background-color: #f0f0f0;
+  .cell.o {
+    background-color: lightcoral;
   }
   
   #status {
